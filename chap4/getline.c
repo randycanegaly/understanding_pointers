@@ -1,14 +1,14 @@
 #include <stdio.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 
-//char* my_getLine(void);
+char* my_getline(void);
 
 int main(void) {
-    //char* my_getLine(void);
-    printf("here?\n");
+    char* line = my_getline();
+    printf("%s\n", line);
 }
-/*
-char* my_getLine(void) {
+
+char* my_getline(void) {
     const size_t sizeIncrement = 10;//initial size of the buffer and how much to grow it by each time
     char* buffer = malloc(sizeIncrement);//allocate memory in the heap for buffter
     char* currentPosition = buffer;//next spot in the buffer where something can be added
@@ -38,6 +38,7 @@ char* my_getLine(void) {
             currentPosition = newBuffer + (currentPosition - buffer);
             buffer = newBuffer;//realloc could have moved things in address space, so set pointer to the start of the buffer
             //to wherever the start of the new buffer is
+            //printf("New maximum length: %ld\n", maximumLength);
         }
         *currentPosition++ = character;//set the value that currentPosition points to to be the new character read in
     }
@@ -45,4 +46,3 @@ char* my_getLine(void) {
     return buffer;
 }
 
-*/
